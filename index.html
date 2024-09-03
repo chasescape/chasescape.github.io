@@ -5,43 +5,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        const nav = document.getElementById('nav');
+        const toggle = document.getElementById('toggle');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        })
+    </script>
 </head>
+
 <style>
     body {
-        background-color: rgb(119, 173, 230);
+        background-color: rgb(38, 38, 39);
         margin: 0;
     }
 
-    div {
-        background-color: rgb(119, 173, 230);
-        width: 49.8%;
-        height: 100vh;
-        border: 1px solid black;
-        float: left;
+    nav {
+        background: #fff;
+        padding: 20px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: width 0.6s linear;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    .grid {
-        background-color: rgb(255, 255, 255);
-        display: grid;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 0px;
-        grid-auto-rows: minmax(100px, auto);
-        border: 1px solid red;
+    nav.active {
+        width: 100%;
+        height: 1dvh;
+    }
 
+    nav ul {
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        list-style-type: none;
+        width: 0;
+    }
+
+    nav.active ul {
+        width: 100%;
+    }
+
+    nav ul li {
+        opacity: 0;
+        transition: all 0.6s linear;
+    }
+
+    nav.active ul li {
+        opacity: 1;
+        transform: rotateY(360deg);
+    }
+
+    nav.active ul li a {
+        text-decoration: none;
+        color: black;
+        margin: 0 10px;
+
+    }
+
+    nav .icon {
+        background-color: #fff;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        border: 0;
+        position: relative;
+    }
+
+    .icon .line {
+        background: #000;
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        top: 10px;
+        left: 5px;
+    }
+
+    .icon .line2 {
+        top: 20px;
+    }
+
+    nav.active .icom .line1 {
+        transform: rotate(-765deg);
+    }
+
+    nav.active .icom .line2 {
+        transform: rotate(765deg);
     }
 </style>
 
 <body>
-    <div class="grid">
-        <div class="one">One</div>
-        <div class="two">Two</div>
-        <div class="three">Three</div>
-        <div class="four">Four</div>
-        <div class="five">Five</div>
-        <div class="six">Six</div>
-    </div>
-    <div></div>
+
+    <nav id="nav" class="active">
+        <button class="icon" id="toggle">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+        </button>
+        <ul>
+            <li>
+                <a href="#">name</a>
+            </li>
+
+            <li>
+                <a href="#">work</a>
+            </li>
+
+            <li>
+                <a href="#">contact</a>
+            </li>
+
+            <li>
+                <a href="#">about</a>
+            </li>
+        </ul>
+
+    </nav>
+    </nav>
+
 </body>
 
 </html>
