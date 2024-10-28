@@ -1,140 +1,59 @@
 <!DOCTYPE html>
-<html lang="ch">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        const nav = document.getElementById('nav');
-        const toggle = document.getElementById('toggle');
-
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        })
-    </script>
-</head>
-
-<style>
-    body {
-        background-color: rgb(38, 38, 39);
+<html>
+  <head>
+    <title>Echolog - IP Logger</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
         margin: 0;
-    }
-
-    nav {
-        background: #fff;
-        padding: 20px;
-        width: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: width 0.6s linear;
-        border-radius: 3px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    nav.active {
-        width: 100%;
-        height: 1dvh;
-    }
-
-    nav ul {
-        display: flex;
-        align-items: center;
-        /* justify-content: center; */
-        list-style-type: none;
-        width: 0;
-    }
-
-    nav.active ul {
-        width: 100%;
-    }
-
-    nav ul li {
-        opacity: 0;
-        transition: all 0.6s linear;
-    }
-
-    nav.active ul li {
-        opacity: 1;
-        transform: rotateY(360deg);
-    }
-
-    nav.active ul li a {
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+      h1 {
+        font-size: 36px;
+        color: #0066cc;
+        text-align: center;
+        margin-top: 50px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #333;
+        margin: 20px 10px;
+      }
+      a {
+        color: #333;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: blue;
+      }
+      .button {
         text-decoration: none;
-        color: black;
-        margin: 0 10px;
-
-    }
-
-    nav .icon {
-        background-color: #fff;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        border: 0;
-        position: relative;
-    }
-
-    .icon .line {
-        background: #000;
-        width: 20px;
-        height: 2px;
-        position: absolute;
-        top: 10px;
-        left: 5px;
-    }
-
-    .icon .line2 {
-        top: 20px;
-    }
-
-    nav.active .icom .line1 {
-        transform: rotate(-765deg);
-    }
-
-    nav.active .icom .line2 {
-        transform: rotate(765deg);
-    }
-
-    h1 {
-        font-style: 宋体;
+        display: block;
+        width: 25%;
+        height: 40px;
+        background-color: #0066cc;
         color: #fff;
-    }
-</style>
-
-<body>
-
-    <nav id="nav" class="active">
-        <button class="icon" id="toggle">
-            <div class="line line1"></div>
-            <div class="line line2"></div>
-        </button>
-        <ul>
-            <li>
-                <a href="#">name</a>
-            </li>
-
-            <li>
-                <a href="#">work</a>
-            </li>
-
-            <li>
-                <a href="#">contact</a>
-            </li>
-
-            <li>
-                <a href="#">about</a>
-            </li>
-        </ul>
-
-    </nav>
-
-    <div>
-        <h1></h1>
-
-    </div>
-
-</body>
-
+        text-align: center;
+        line-height: 40px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top: 50px;
+        transition: background-color 0.3s ease-in-out;
+      }
+      .button:hover {
+        background-color: #004080;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Echolog - IP Logger</h1>
+    <p>Echolog is a simple and customizable IP logger written in plain JavaScript, which utilizes a free and open-source API provided by wtfismyip.com to collect information about the user's device and environment.</p>
+    <p>For more information on Echolog, including how to use it in your project and how to contribute to the project, please check out the <a href="https://github.com/3kh0/echolog">GitHub repository</a>.</p>
+    <a href="./tests/sample.html" class="button">See it in action</a>
+    <p style="text-align:center;"><small>Made by <a target="_blank" href="https://github.com/3kh0">3kh0</a></small></p>
+  </body>
 </html>
