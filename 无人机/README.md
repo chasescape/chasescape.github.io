@@ -1,2 +1,2 @@
-# Drone_02-12-23
-Explore the fascinating world of drone technology with our step-by-step tutorial on creating a stunning Drone Landing Page Website using HTML, CSS, and JavaScript!
+# 无人机网站页面
+用于挑战杯2024.12
