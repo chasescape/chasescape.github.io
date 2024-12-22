@@ -1,0 +1,69 @@
+/* 通用的页面重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置页面的基础字体 */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('path/to/your/background.gif');
+    /* 设置 GIF 背景 */
+    background-size: cover;
+    /* 背景图像覆盖整个页面 */
+    background-position: center;
+    /* 背景居中 */
+    background-repeat: no-repeat;
+    /* 背景不重复 */
+    background-attachment: fixed;
+    /* 背景固定，不随页面滚动 */
+    height: 100vh;
+    /* 确保背景图覆盖整个视口 */
+}
+
+/* 页头样式 */
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* 背景色半透明，以确保内容可见 */
+    padding: 10px 20px;
+}
+
+/* 导航栏样式 */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 导航项样式 */
+nav ul li {
+    margin: 0 20px;
+}
+
+/* 导航链接样式 */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* 鼠标悬停时改变链接颜色 */
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+/* 响应式设计：小屏幕时，导航栏堆叠 */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
