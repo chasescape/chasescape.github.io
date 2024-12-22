@@ -8,7 +8,7 @@
 /* 设置页面的基础字体 */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('path/to/your/background.gif');
+    background-image: url('../image/backdrop/IMG_0887.jpeg');
     /* 设置 GIF 背景 */
     background-size: cover;
     /* 背景图像覆盖整个页面 */
@@ -53,7 +53,7 @@ nav ul li a {
 
 /* 鼠标悬停时改变链接颜色 */
 nav ul li a:hover {
-    color: #ff6347;
+    color: #5dd4f5;
 }
 
 /* 响应式设计：小屏幕时，导航栏堆叠 */
