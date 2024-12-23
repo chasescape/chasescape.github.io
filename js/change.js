@@ -1,18 +1,15 @@
-const toggleForm = document.getElementById("toggle-form");
-const toggleFormRegister = document.getElementById("toggle-form-register");
+function check(thisform) {
 
-// 获取注册和登录表单
-const registerForm = document.getElementById("register-form");
-const loginForm = document.getElementById("login-form");
+    var name = document.getElementById("name").value;
+    var pass = document.getElementById("pass").value;
 
-// 切换到注册表单
-toggleForm.addEventListener("click", function () {
-    loginForm.style.display = "none";
-    registerForm.style.display = "block";
-});
+    if (name == "admin" && pass == "123456") {
+        alert("登录成功！");
+        window.document.f.action = "index.html";
+        window.document.f.submit();
+    }
+    else {
+        alert("用户名或密码错误！");
+    }
 
-// 切换到登录表单
-toggleFormRegister.addEventListener("click", function () {
-    registerForm.style.display = "none";
-    loginForm.style.display = "block";
-});
+}

@@ -6,56 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>chasefreee</title>
     <link rel="stylesheet" href="css/login.css" />
+    <script type="text/javascript" src="js/change.js"></script>
 </head>
 
 <body>
-    <div class="login">
+    <form class="login" name="f" onsubmit="check(this)">
         <h2>用户登录</h2>
         <div class="login_box">
-            <input type="text" required /><label>用户名</label>
+            <input type="text" id="name" required /><label>用户名</label>
         </div>
         <div class="login_box">
-            <input type="password" required="required" /><label>密码</label>
+            <input type="password" id="pass" required="required" /><label>密码</label>
         </div>
-        <a  href="javascript:void(0)" id="toggle-form">
+        <a id="toggle-form" type="button" onclick="check(this)">
             登录
             <span></span>
             <span></span>
             <span></span>
             <span></span>
         </a>
-        <a>
-            注册
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-    </div>
-
-
-    <!-- 注册表单 -->
-    <div id="register-form" style="display:none;">
-        <h2>用户注册</h2>
-        <div class="login_box">
-            <input type="text" required /><label>用户名</label>
-        </div>
-        <div class="login_box">
-            <input type="password" required /><label>密码</label>
-        </div>
-        <div class="login_box">
-            <input type="password" required /><label>确认密码</label>
-        </div>
-        <a href="javascript:void(0)" id="toggle-form-register">
-            切换到登录
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-    </div>
-    </div>
-    <script src="js/change.js"></script>
+    </form>
 </body>
 
 </html>
