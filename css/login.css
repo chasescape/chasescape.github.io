@@ -1,125 +1,194 @@
-/* 基础重置 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	/* 初始化 清除页面元素的内外边距 */
+	padding: 0;
+	margin: 0;
+	/* 盒子模型 */
+	box-sizing: border-box;
 }
 
 /* 页面背景 */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('../image/backdrop/IMG_0889.jpeg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    color: white;
-    /* 设置字体颜色为白色 */
+	font-family: Arial, sans-serif;
+	background-image: url('../image/backdrop/IMG_0889.jpeg');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	color: white;
+	/* 设置字体颜色为白色 */
 }
 
-/* 表单容器 */
-.form-container {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.553);
-    /* 半透明背景 */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(52, 52, 52, 0.1);
-    width: 80%;
-    /* 宽度占屏幕的 80% */
-    max-width: 400px;
-    /* 最大宽度 400px */
-    min-width: 250px;
-    /* 最小宽度 250px */
-    margin: 0 auto;
-    /* 居中 */
+.login {
+	/* 弹性布局 让子元素称为弹性项目 */
+	display: flex;
+	/* 让弹性项目垂直排列 原理是改变弹性盒子的主轴方向 父元素就是弹性盒子 现在改变后的主轴方向是向下了 */
+	flex-direction: column;
+	/* 让弹性项目在交叉轴方向水平居中 现在主轴的方向是向下 交叉轴的方向是与主轴垂直 交叉轴的方向是向右 */
+	align-items: center;
+	width: 400px;
+	padding: 40px;
+	background-color: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(3px);
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* 屏幕宽度小于 768px（手机） */
-@media (max-width: 768px) {
-    .form-container {
-        width: 90%;
-        /* 手机屏幕时宽度为 90% */
-        padding: 15px;
-    }
+.login h2 {
+	color: #fff;
+	margin-bottom: 30px;
 }
 
-/* 屏幕宽度小于 480px（极小屏幕设备） */
-@media (max-width: 480px) {
-    .form-container {
-        width: 95%;
-        /* 更小屏幕时宽度为 95% */
-        padding: 10px;
-    }
+.login .login_box {
+	/* 相对定位 */
+	position: relative;
+	width: 100%;
 }
 
-/* 显示登录表单 */
-.login-form {
-    display: block;
+.login .login_box input {
+	/* 清除input框自带的边框和轮廓 */
+	outline: none;
+	border: none;
+	width: 100%;
+	padding: 10px 0;
+	margin-bottom: 30px;
+	color: #fff;
+	font-size: 16px;
+	border-bottom: 1px solid #fff;
+	/* 背景颜色为透明色 */
+	background-color: transparent;
 }
 
-/* 容器 */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login .login_box label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	color: #fff;
+	/* 这个属性的默认值是auto 默认是这个元素可以被点击 但是如果我们写了none 就是这个元素不能被点击 , 就好像它可见但是不能用 可望而不可即 */
+	/* 这个就是两者的区别 */
+	pointer-events: none;
+	/* 加个过渡 */
+	transition: all 0.5s;
 }
 
-/* 输入框 */
-.input-group {
-    margin-bottom: 15px;
+/* :focus 选择器是当input获得焦点是触发的样式 + 是相邻兄弟选择器 去找与input相邻的兄弟label */
+/* :valid 选择器是判断input框的内容是否合法,如果合法会执行下面的属性代码,不合法就不会执行,我们刚开始写布局的时候给input框写了required 我们删掉看对比 当没有required的话input框的值就会被认为一直合法,所以一直都是下方的样式 ,但是密码不会,密码框内的值为空,那么这句话局不合法,required不能为空 当我们给密码框写点东西的时候才会执行以下代码*/
+.login .login_box input:focus+label,
+.login .login_box input:valid+label {
+	top: -20px;
+	color: #03e9f4;
+	font-size: 12px;
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: white;
-    /* 设置标签文本为白色 */
+.login a {
+	display: inline-block;
+	/* 使 <a> 标签显示为块元素，但保持在行内 */
+	margin: 0 10px;
+	overflow: hidden;
+	position: relative;
+	padding: 10px 20px;
+	color: #03e9f4;
+	/* 取消a表现原有的下划线 */
+	text-decoration: none;
+	/* 同样加个过渡 */
+	transition: all 0.5s;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: white;
-    /* 设置输入框文本为白色 */
-    background-color: #ffffff;
-    /* 设置输入框背景为深色 */
+.login a:hover {
+	color: #fff;
+	border-radius: 5px;
+	background-color: #03e9f4;
+	box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+		0 0 100px #03e9f4;
 }
 
-/* 按钮 */
-.btn {
-    width: 100%;
-    padding: 10px;
-    background: #535353;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+.login a span {
+	position: absolute;
 }
 
-.btn:hover {
-    color: #5dd4f5;
+.login a span:first-child {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	/* to right 就是往右边 下面的同理 */
+	background: linear-gradient(to right, transparent, #03e9f4);
+	/* 动画 名称 时长 linear是匀速运动 infinite是无限次运动 */
+	animation: move1 1s linear infinite;
 }
 
-/* 切换表单链接 */
-.switch-form {
-    text-align: center;
-    margin-top: 15px;
+.login a span:nth-child(2) {
+	right: 0;
+	top: -100%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(transparent, #03e9f4);
+	/* 这里多了个0.25s其实是延迟时间 */
+	animation: move2 1s linear 0.25s infinite;
 }
 
-.switch-form a {
-    color: #5dd4f5;
-    text-decoration: none;
+.login a span:nth-child(3) {
+	right: -100%;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(to left, transparent, #03e9f4);
+	animation: move3 1s linear 0.5s infinite;
 }
 
-.switch-form a:hover {
-    text-decoration: underline;
+.login a span:last-child {
+	left: 0;
+	bottom: -100%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(#03e9f4, transparent);
+	animation: move4 1s linear 0.75s infinite;
+}
+
+/* 写一下动画 再坚持一下 视频马上就完了 */
+@keyframes move1 {
+	0% {
+		left: -100%;
+	}
+
+	50%,
+	100% {
+		left: 100%;
+	}
+}
+
+@keyframes move2 {
+	0% {
+		top: -100%;
+	}
+
+	50%,
+	100% {
+		top: 100%;
+	}
+}
+
+@keyframes move3 {
+	0% {
+		right: -100%;
+	}
+
+	50%,
+	100% {
+		right: 100%;
+	}
+}
+
+@keyframes move4 {
+	0% {
+		bottom: -100%;
+	}
+
+	50%,
+	100% {
+		bottom: 100%;
+	}
 }
