@@ -29,7 +29,7 @@ body {
 	flex-direction: column;
 	/* 让弹性项目在交叉轴方向水平居中 现在主轴的方向是向下 交叉轴的方向是与主轴垂直 交叉轴的方向是向右 */
 	align-items: center;
-	width: 400px;
+	width: 500px;
 	padding: 40px;
 	background-color: rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(3px);
@@ -84,17 +84,17 @@ body {
 }
 
 .login a {
+	width: 100%;
 	display: inline-block;
-	/* 使 <a> 标签显示为块元素，但保持在行内 */
-	margin: 0 10px;
+	margin: 10px 10px;
+	/* 左右间距 */
 	overflow: hidden;
 	position: relative;
 	padding: 10px 20px;
 	color: #03e9f4;
-	/* 取消a表现原有的下划线 */
 	text-decoration: none;
-	/* 同样加个过渡 */
 	transition: all 0.5s;
+	text-align: center;
 }
 
 .login a:hover {
@@ -126,7 +126,6 @@ body {
 	width: 2px;
 	height: 100%;
 	background: linear-gradient(transparent, #03e9f4);
-	/* 这里多了个0.25s其实是延迟时间 */
 	animation: move2 1s linear 0.25s infinite;
 }
 
@@ -148,7 +147,6 @@ body {
 	animation: move4 1s linear 0.75s infinite;
 }
 
-/* 写一下动画 再坚持一下 视频马上就完了 */
 @keyframes move1 {
 	0% {
 		left: -100%;

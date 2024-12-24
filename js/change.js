@@ -13,3 +13,21 @@ function check(thisform) {
     }
 
 }
+function check2(thisform) {
+
+    var name = document.getElementById("name").value;
+    var pass = document.getElementById("pass").value;
+    var pass = document.getElementById("passrequit").value;
+
+    if (name == "admin" && pass == "123456") {
+        alert("用户已存在");
+    }
+    else {
+        window.document.f.action = "login.html";
+        window.document.f.submit();
+    }
+}
+function check3(thisform) {
+    window.document.f.action = "register.html";
+    window.document.f.submit();
+}

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form class="login" name="f" onsubmit="check(this)">
+    <form class="login" name="f" onsubmit="check2(this)">
         <h2>用户登录</h2>
         <div class="login_box">
             <input type="text" id="name" required /><label>用户名</label>
@@ -18,14 +18,10 @@
         <div class="login_box">
             <input type="password" id="pass" required="required" /><label>密码</label>
         </div>
-        <a id="toggle-form" type="button" onclick="check(this)">
-            登录
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-        <a id="toggle-form" type="button" onclick="check3(this)">
+        <div class="login_box">
+            <input type="password" id="passrequit" required="required" /><label>确认密码</label>
+        </div>
+        <a id="toggle-form" type="button" onclick="check2(this)">
             注册
             <span></span>
             <span></span>
@@ -34,4 +30,5 @@
         </a>
     </form>
 </body>
+
 </html>
