@@ -25,7 +25,7 @@
 
     header {
         width: 100%;
-        height: 950px;
+        height: 100vh;
         overflow: hidden;
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
         transition: clip-path 0.5s ease;
@@ -189,6 +189,59 @@
             margin-bottom: 0;
         }
     }
+
+    nav {
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+    }
+
+
+    nav ul li {
+        float: right;
+        margin-right: 25px;
+        list-style: none;
+        font-weight: 600;
+    }
+
+    footer {
+        text-align: center;
+        border-top: 3px solid grey;
+        margin-top: 40px;
+        font-size: 20px;
+        padding-top: 40px;
+    }
+
+    .text {
+        position: absolute;
+        z-index: 100000;
+        opacity: 0.5;
+        color: blue;
+        height: 100px;
+        width: 100px;
+        top: 93vh;
+        left: calc(50% - 50px);
+        text-align: center;
+        line-height: 100px;
+        font-size: 50px;
+        animation-duration: 2s;
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes slidein {
+
+        0%,
+        100% {
+            top: 91vh;
+        }
+
+        50% {
+            top: 93vh;
+        }
+    }
 </style>
 
 <body>
@@ -197,7 +250,20 @@
         <div class="shell">
             <header>
                 <div class="img"></div>
+                <div class="text">⬇</div>
             </header>
+            <nav>
+                <ul style="float: left;margin-left: 25px;">
+                    <li>ASOUTHERNCAT</li>
+                </ul>
+                <ul>
+                    <li>Contactme</li>
+                    <li>Portfolio</li>
+                    <li>Skills</li>
+                    <li>About</li>
+                    <li style="color: skyblue;">Home</li>
+                </ul>
+            </nav>
             <div class="main">
                 <main>
                     <article>
@@ -290,11 +356,13 @@
                                 message
                                 of the designer.</p>
                         </div>
+                        <footer>
+                            © 2024 chasefreee. blog
+                        </footer>
                     </article>
                 </main>
             </div>
         </div>
-
         <!-- <script src="script.js"></script> -->
     </body>
 

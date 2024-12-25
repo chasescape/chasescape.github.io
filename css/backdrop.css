@@ -24,9 +24,8 @@ body {
     flex-direction: column;
 }
 
-/* 页头样式 */
 header {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(82, 82, 82, 0.6);
     /* 背景色半透明，以确保内容可见 */
     padding: 10px 20px;
 }
@@ -35,7 +34,7 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 }
 
