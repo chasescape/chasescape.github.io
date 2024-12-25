@@ -72,7 +72,8 @@ nav ul li a:hover {
 
 /* 主内容 */
 main {
-    flex: 1; /* 确保 main 占据剩余空间 */
+    flex: 1;
+    /* 确保 main 占据剩余空间 */
     width: 90%;
     max-width: 1200px;
     margin: 20px auto;
@@ -148,7 +149,8 @@ footer {
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
-    margin-top: auto; /* 确保页脚位于页面底部 */
+    margin-top: auto;
+    /* 确保页脚位于页面底部 */
 }
 
 /* 页脚文字样式 */
