@@ -28,6 +28,7 @@ header {
     background-color: rgba(82, 82, 82, 0.6);
     /* 背景色半透明，以确保内容可见 */
     padding: 10px 20px;
+    position: relative;
 }
 
 /* 导航栏样式 */

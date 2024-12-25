@@ -191,12 +191,13 @@ img {
 /*==================== NAV ====================*/
 /* 页头样式 */
 header {
-    background-color: rgba(82, 82, 82, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     /* 背景色半透明，以确保内容可见 */
     padding: 10px 20px;
 }
 
 /* 导航栏样式 */
+
 nav ul {
     list-style: none;
     display: flex;
@@ -254,6 +255,7 @@ nav ul li a:hover {
 
 .home__social-icon {
     font-size: 1.25rem;
+    width: 30px;
     color: var(--first-color);
 }
 
