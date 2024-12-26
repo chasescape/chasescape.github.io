@@ -198,24 +198,40 @@
             margin: 0;
         }
 
-        /* 页头样式 */
+        /* 页头样式：固定在顶部 */
         header {
             background-color: rgba(0, 0, 0, 0.6);
-            /* 背景色半透明，以确保内容可见 */
             padding: 10px 20px;
+            position: fixed;
+            /* 固定导航栏 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* 全宽 */
+            z-index: 1000;
+            /* 确保导航栏在所有内容之上 */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            /* 添加阴影以分隔导航栏和内容 */
         }
 
+        /* 导航栏样式 */
         /* 导航栏样式 */
         nav ul {
             list-style: none;
             display: flex;
             justify-content: right;
+            /* 修改为居中对齐 */
             align-items: center;
+            margin: 0;
+            padding: 0;
+            margin-right: 30px;
         }
 
         /* 导航项样式 */
         nav ul li {
             margin: 0 20px;
+            position: relative;
+            /* 为了下拉菜单定位 */
         }
 
         /* 导航链接样式 */
@@ -232,6 +248,61 @@
             color: #5dd4f5;
         }
 
+        /* 下拉菜单样式 */
+        nav ul li.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* 隐藏二级菜单，直到悬停 */
+        /* 下拉菜单样式 */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            /* 紧贴主菜单项 */
+            left: 50%;
+            /* 从父项中心开始 */
+            transform: translateX(-50%);
+            /* 水平居中对齐 */
+            background-color: rgba(0, 0, 0, 0.6);
+            list-style: none;
+            padding: 5px 0;
+            /* 上下内边距 */
+            margin: 0;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            width: max-content;
+            /* 根据内容自动调整宽度 */
+            min-width: 120px;
+            /* 设置最小宽度以保持一致 */
+        }
+
+        /* 下拉菜单项样式 */
+        .dropdown-menu li {
+            text-align: center;
+            /* 居中对齐文本 */
+        }
+
+        .dropdown-menu li a {
+            color: #fff;
+            padding: 5px 15px;
+            /* 上下和左右的内边距 */
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        /* 鼠标悬停时改变二级菜单项背景色 */
+        .dropdown-menu li a:hover {
+            background-color: #5dd4f5;
+        }
+
+        /* Skills 父级悬停时显示菜单 */
+        nav ul li.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
         /* 响应式设计：小屏幕时，导航栏堆叠 */
         @media screen and (max-width: 768px) {
             nav ul {
@@ -241,5 +312,9 @@
 
             nav ul li {
                 margin: 10px 0;
+            }
+
+            .dropdown-menu {
+                position: static;
             }
         }
