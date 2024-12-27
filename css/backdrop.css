@@ -7,7 +7,6 @@
 
 /* 设置页面的基础字体 */
 body {
-    font-family: Arial, sans-serif;
     background-image: url('../image/backdrop/IMG_0898.png');
     /* 设置 GIF 背景 */
     background-size: cover;
@@ -25,10 +24,13 @@ body {
 }
 
 header {
-    background-color: rgba(82, 82, 82, 0.6);
+    background-color: white;
     /* 背景色半透明，以确保内容可见 */
-    padding: 10px 20px;
+    height: 50px;
+    line-height: 50px;
     position: relative;
+    border-bottom: 3px solid grey;
+
 }
 
 /* 导航栏样式 */
@@ -41,15 +43,16 @@ nav ul {
 
 /* 导航项样式 */
 nav ul li {
-    margin: 0 20px;
+    margin-right: 25px;
+    margin-left: 20px;
 }
 
 /* 导航链接样式 */
 nav ul li a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     transition: color 0.3s;
 }
 

@@ -119,7 +119,6 @@ html {
 
 body {
     margin: 0 0 var(--header-height) 0;
-    font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
@@ -191,8 +190,11 @@ img {
 /*==================== NAV ====================*/
 /* 页头样式 */
 header {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
+    background-color: white;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 3px solid grey;
+
 }
 
 /* 导航栏样式 */
@@ -206,15 +208,16 @@ nav ul {
 
 /* 导航项样式 */
 nav ul li {
-    margin: 0 20px;
+    margin-right: 25px;
+    margin-left: 20px;
 }
 
 /* 导航链接样式 */
 nav ul li a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
